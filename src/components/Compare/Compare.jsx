@@ -7,17 +7,17 @@ function Compare() {
         <h2>Compare all inclusive student homes.</h2>
         <div className="compare-features">
           <div className="compare-feature">
-            <img src="../../../public/travel_explore_FILL0_wght300_GRAD0_opsz48.png" alt="travel logo"/>
+            <img src="travel_explore_FILL0_wght300_GRAD0_opsz48.png" alt="travel logo"/>
             <h3>Search</h3>
             <p>Find your dream home in the perfect area near your university.</p>
           </div>
           <div className="compare-feature">
-            <img src="../../../public/rule_FILL0_wght300_GRAD0_opsz48 1.png" alt="checklist logo"/>
+            <img src="public/rule_FILL0_wght300_GRAD0_opsz48 1.png" alt="checklist logo"/>
             <h3>Compare</h3>
             <p>Compare student accommodation to find the right home for you.</p>
           </div>
           <div className="compare-feature">
-            <img src="../../../public/receipt_long_FILL0_wght300_GRAD0_opsz48.png" alt="receipt logo" />
+            <img src="receipt_long_FILL0_wght300_GRAD0_opsz48.png" alt="receipt logo" />
             <h3>Bills included</h3>
             <p>Bills are included in all rent prices. No hidden fees.</p>
           </div>
@@ -26,14 +26,14 @@ function Compare() {
       <div className="compare-bottom-container">
         <div className="bottom-info">
           <div className="info-selection">
-            <img src="../../../public/real_estate_agent_FILL0_wght300_GRAD0_opsz48.png" alt="real-estate-logo" />
+            <img src="real_estate_agent_FILL0_wght300_GRAD0_opsz48.png" alt="real-estate-logo" />
             <div className="selection-text">
               <h3>Best selection</h3>
               <p>Best selection of student accommodations. Never been easier to find a home that’s right for you.</p>
             </div>
           </div>
           <div className="info-favorite">
-            <img src="../../../public/favorite_FILL0_wght300_GRAD0_opsz48.png" alt="favorite-logo" />
+            <img src="favorite_FILL0_wght300_GRAD0_opsz48.png" alt="favorite-logo" />
             <div className="favorite-text">
               <h3>Your favorite</h3>
               <p>Shortlist your favourite properties and send enquiries in one click.</p>
@@ -42,9 +42,7 @@ function Compare() {
           <button>Search & Compare</button>
         </div>
         <div className="bottom-picture">
-          
         </div>
-
       </div>
     </div>
     
