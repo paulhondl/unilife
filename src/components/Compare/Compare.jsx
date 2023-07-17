@@ -12,7 +12,7 @@ function Compare() {
             <p>Find your dream home in the perfect area near your university.</p>
           </div>
           <div className="compare-feature">
-            <img src="public/rule_FILL0_wght300_GRAD0_opsz48 1.png" alt="checklist logo"/>
+            <img src="rule_FILL0_wght300_GRAD0_opsz48 1.png" alt="checklist logo"/>
             <h3>Compare</h3>
             <p>Compare student accommodation to find the right home for you.</p>
           </div>
