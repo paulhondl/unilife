@@ -73,7 +73,7 @@
   margin-bottom: 20px;
 }
 
-.bottom-info button {
+.compare-container button {
   align-self: center;
   color: white;
   background: #3A5295;
@@ -86,13 +86,17 @@
   transition: transform 100ms ease;
 }
 
-.bottom-info button:hover {
+.compare-container button:hover {
   opacity: 0.9;
   cursor: pointer;
 }
 
-.bottom-info button:active {
+.compare-container button:active {
   transform: scale(0.95);
+}
+
+.compare-container > button {
+  display: none;
 }
 
 .bottom-picture {
@@ -116,5 +120,9 @@
   }
   .compare-bottom-container {
     display: none;
+  }
+  .compare-container > button {
+    display: block;
+    margin: 50px auto;
   }
 }
