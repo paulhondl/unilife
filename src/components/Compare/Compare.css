@@ -37,8 +37,9 @@
 }
 
 .compare-bottom-container {
+  min-height: 500px;
   display: flex;
-  height: 500px
+  justify-content: center;
 }
 
 .bottom-info,
@@ -60,6 +61,12 @@
   text-align: left;
 }
 
+.info-selection img,
+.info-favorite img {
+  align-self: flex-start;
+  max-width: 100%;
+}
+
 .info-selection h3,
 .info-favorite h3 {
   font-weight: 500;
@@ -76,12 +83,22 @@
   padding: 15px 25px;
   border-radius: 12px;
   margin-top: 50px;
+  transition: transform 100ms ease;
+}
+
+.bottom-info button:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.bottom-info button:active {
+  transform: scale(0.95);
 }
 
 .bottom-picture {
   background-image: url("../../../public/Rectangle\ 6.png");
   background-repeat: no-repeat;
-  background-position: right 50px ;
+  background-position: right bottom;
 }
 
 @media (max-width: 750px) {

@@ -5,6 +5,11 @@
   font-family: 'Epilogue', sans-serif;
 }
 
+body {
+  max-width: 1500px;
+  margin-inline: auto;
+}
+
 :root {
   --blue-bg: #00A2E1;
 }
