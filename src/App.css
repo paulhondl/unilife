@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Epilogue', sans-serif;
+}
+
+:root {
+  --blue-bg: #00A2E1;
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}

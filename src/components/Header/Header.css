@@ -1,0 +1,83 @@
+.header-container {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 40px;
+  background-color: var(--blue-bg);
+  color: white;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+/* MOBILE LINKS */
+
+.mobile-links {
+  display: none;
+  color: white;
+  background-color: var(--blue-bg);
+}
+
+.mobile-link {
+  text-align: center;
+  border-top: 1px solid white;
+  padding-block: 10px;
+}
+
+.show {
+  display: block;
+}
+
+
+
+.hamburger-icon-container {
+  display: grid;
+  place-items: center;
+}
+
+.header-left,
+.header-links {
+  display: flex;
+  align-items: center;
+}
+
+.header-links {
+  gap: 20px;
+}
+
+.header-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.heart-icon-container,
+.contact-icon-container {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 800px) {
+  .header-container {
+    padding-inline: 25px;
+  }
+}
+
+@media (max-width: 550px) {
+  .header-container {
+    padding-inline: 15px;
+  }
+  .header-links {
+    display: none;
+  }
+  .hamburger-menu {
+    display: block;
+    font-size: 2rem;
+  }
+
+  .hamburger-checkbox:checked {
+    color: red;
+  }
+}
