@@ -24,7 +24,27 @@ function Compare() {
         </div>
       </div>
       <div className="compare-bottom-container">
-        Bottom
+        <div className="bottom-info">
+          <div className="info-selection">
+            <img src="../../../public/real_estate_agent_FILL0_wght300_GRAD0_opsz48.png" alt="real-estate-logo" />
+            <div className="selection-text">
+              <h3>Best selection</h3>
+              <p>Best selection of student accommodations. Never been easier to find a home that’s right for you.</p>
+            </div>
+          </div>
+          <div className="info-favorite">
+            <img src="../../../public/favorite_FILL0_wght300_GRAD0_opsz48.png" alt="favorite-logo" />
+            <div className="favorite-text">
+              <h3>Your favorite</h3>
+              <p>Shortlist your favourite properties and send enquiries in one click.</p>
+            </div>
+          </div>
+          <button>Search & Compare</button>
+        </div>
+        <div className="bottom-picture">
+          
+        </div>
+
       </div>
     </div>
     

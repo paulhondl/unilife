@@ -4,6 +4,10 @@
   height: auto;
 }
 
+.compare-container p {
+  line-height: 1.5;
+}
+
 .compare-top-container {
   padding-block: 40px;
 }
@@ -26,14 +30,58 @@
   margin-block: 20px;
 }
 
-.compare-feature p {
-  line-height: 1.5;
-}
-
 .compare-top-container
 {
   background-color: #F6FAFD;
   border-radius: 24px;
+}
+
+.compare-bottom-container {
+  display: flex;
+  height: 500px
+}
+
+.bottom-info,
+.bottom-picture {
+  flex-basis: 50%;
+}
+
+.bottom-info {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.info-selection,
+.info-favorite {
+  display: flex;
+  gap: 30px;
+  text-align: left;
+}
+
+.info-selection h3,
+.info-favorite h3 {
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.bottom-info button {
+  align-self: center;
+  color: white;
+  background: #3A5295;
+  border: none;
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: 15px 25px;
+  border-radius: 12px;
+  margin-top: 50px;
+}
+
+.bottom-picture {
+  background-image: url("../../../public/Rectangle\ 6.png");
+  background-repeat: no-repeat;
+  background-position: right 50px ;
 }
 
 @media (max-width: 750px) {
@@ -48,5 +96,8 @@
   .compare-feature {
     flex-basis: unset;
     width: 80%;
+  }
+  .compare-bottom-container {
+    display: none;
   }
 }

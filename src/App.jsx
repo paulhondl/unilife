@@ -12,8 +12,8 @@ function App() {
   return (
    <BrowserRouter>
     <Header />
-    <TopCities />
     <AllCities />
+    <TopCities />
     <SocialMedia />
     <Footer />
    </BrowserRouter>
