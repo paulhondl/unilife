@@ -1,9 +1,10 @@
 import {useState} from "react"
 import {Link} from "react-router-dom"
-import {AiOutlineHeart, AiOutlineMail, AiOutlineClose} from "react-icons/ai"
+import {AiOutlineHeart, AiOutlineMail} from "react-icons/ai"
 import {GiHamburgerMenu} from "react-icons/gi"
 import Modal from 'react-modal';
 import "./Header.css"
+import "./Modal.css"
 
 const customStyles = {
   content: {
@@ -13,6 +14,10 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
+    width: "80%",
+    maxWidth: 800,
+    padding: 30,
+    overflowY: "auto"
   },
 };
 
@@ -20,21 +25,19 @@ Modal.setAppElement(document.getElementById("root"));
 
 function Header() {
 
-  let subtitle;
+  // Modal setup
+
   const [modalIsOpen, setIsOpen] = useState(false);
 
   function openModal() {
     setIsOpen(true);
   }
 
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = '#f00';
-  }
-
   function closeModal() {
     setIsOpen(false);
   }
+
+  // Mobile navbar show/hide functionality
 
   function toggleMobileMenu() {
     document.querySelector(".mobile-links").classList.toggle("show");
@@ -73,20 +76,37 @@ function Header() {
       <div>
       <Modal
         isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-        <button onClick={closeModal}>close</button>
-        <div>I am a modal</div>
-        <form>
-          <input />
-          <button>tab navigation</button>
-          <button>stays</button>
-          <button>inside</button>
-          <button>the modal</button>
+        <div className="modal-header">
+          <h2>Contact Us</h2>
+          <img src="local_post_office_FILL0_wght300_GRAD0_opsz48 1.png" />
+        </div>
+
+        <p>Feel free to contact us if you have any questions.
+        Looking forward to hear from you.</p>
+        
+        <form className="modal-form" onSubmit={closeModal}>
+          <div className="form-section form-left">
+            <label htmlFor="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name"/>
+            <label htmlFor="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number"/>
+            <label htmlFor="user-type">Are you a ...</label>
+            <select name="user-type" id="user-type">
+              <option value="">Enter User Type</option>
+              <option value="student">Student</option>
+              <option value="parent">Parent</option>
+            </select>    
+          </div> 
+          <div className="form-section form-right">
+            <label htmlFor="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email address"/>
+            <textarea name="message" id="message" cols="10" rows="5" placeholder="Enter your message"></textarea>
+            <button className="blue-button">Submit</button>
+          </div>
         </form>
       </Modal>
     </div>

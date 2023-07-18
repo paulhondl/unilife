@@ -11,7 +11,10 @@ function App() {
   return (
    <BrowserRouter>
     <Header />
-    <TopCities />
+    <Routes>
+      <Route path="/" element={<TopCities />} />
+      <Route path="/all-cities" element={<AllCities />} />
+    </Routes>
     <SocialMedia />
     <Footer />
    </BrowserRouter>

@@ -1,0 +1,33 @@
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-form {
+  display: flex;
+  gap: 30px;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  gap: 20px;
+}
+
+.modal-header + p {
+  margin-block: 20px 40px;
+}
+
+.form-section label {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+
+@media (max-width: 800px) {
+  .modal-form {
+    flex-direction: column;
+  }
+}

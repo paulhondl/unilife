@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react"
+import {Link} from "react-router-dom"
 import CityCard from "../../components/CityCard/CityCard";
 import Compare from "../../components/Compare/Compare";
 import "./TopCities.css"
@@ -47,9 +48,9 @@ function TopCities() {
         </section>
         <div className="spacer" style={{height: 100}}></div>
         <section className="city-cards">
-          {topCities.length && topCities.map(city => <CityCard key={city._id} city={city} />)}
+          {topCities.length && topCities.slice(0,9).map(city => <CityCard key={city._id} city={city} />)}
         </section>
-        <button className="blue-button all-cities-btn">See All Cities</button>
+        <Link to="all-cities" className="blue-button all-cities-btn">See All Cities</Link>
       </div>
       <Compare />
     </>

@@ -37,6 +37,7 @@
 
 .all-cities-btn {
   display: block;
+  width: max-content;
   margin: 0 auto 30px;
 }
 
