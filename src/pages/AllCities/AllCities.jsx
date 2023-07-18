@@ -13,6 +13,9 @@ function AllCities() {
       .catch(error => console.log(error))
   }, [])
 
+  useEffect(() =>
+  window.scrollTo(0,0),[])
+
   return (
     <div className="all-cities-container">
       <h2>Search by City</h2>
