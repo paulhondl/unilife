@@ -50,6 +50,7 @@ function TopCities() {
         <section className="city-cards">
           {topCities.length && topCities.map(city => <CityCard key={city._id} city={city} />)}
         </section>
+        <button className="blue-button all-cities-btn">See All Cities</button>
       </div>
       <Compare />
     </>

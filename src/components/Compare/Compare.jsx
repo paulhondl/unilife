@@ -44,7 +44,7 @@ function Compare() {
         <div className="bottom-picture">
         </div>
       </div>
-      <button>Search & Compare</button>
+      <button className="blue-button">Search & Compare</button>
     </div>
     
   )
