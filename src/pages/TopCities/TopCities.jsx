@@ -26,7 +26,6 @@ function TopCities() {
   }
 
   function getSelectedCity(event) {
-    console.log(event.target.value)
     setSelectedCity(event.target.value);
   }
 
