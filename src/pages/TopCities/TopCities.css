@@ -25,3 +25,12 @@
   align-items: center;
   gap: 20px;
 }
+
+select:invalid,
+option[value=""] {
+  color: grey;
+}
+
+select {
+  color: black;
+}

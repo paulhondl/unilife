@@ -20,7 +20,7 @@ function TopCities() {
       const chosenCity = topCities.find(city => city.name = selectedCity)
       fetch(`https://unilife-server.herokuapp.com/cities/${chosenCity._id}`)
         .then(response => response.json())
-        .then(data => console.log(data.data))
+        .then(data => console.log(data.data[0]))
     }
   }
 
@@ -37,7 +37,7 @@ function TopCities() {
           <p>A simple and faster way to search for student accommodation</p>
         </div>
         <form className="find-city-form" onSubmit={handleCitySearch}>
-          <select onChange={getSelectedCity} name="find-homes-select" id="find-homes-select">
+          <select required onChange={getSelectedCity} name="find-homes-select" id="find-homes-select">
             <option value="">Search by city</option>
             {topCities.length && topCities.map(city => <option key={city._id} value={city.name}>{city.name}</option>)}
           </select>
