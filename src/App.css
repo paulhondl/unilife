@@ -22,3 +22,41 @@ a {
 ul {
   list-style: none;
 }
+
+h1 {
+  font-weight: 500;
+  font-size: 3rem;
+}
+
+p {
+  line-height: 1.5;
+}
+
+.blue-button {
+  color: white;
+  background: #3A5295;
+  border: none;
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: calc(0.75em + 1px) calc(1.25em + 1px);
+  border-radius: 12px;
+  transition: transform 100ms ease;
+}
+
+.blue-button:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.blue-button:active {
+  transform: scale(0.95);
+}
+
+select, input {
+  border: 1px solid rgba(206, 211, 216, 1);
+  outline: none;
+  font-size: 1.25rem;
+  color: rgba(206, 211, 216, 1);
+  border-radius: 12px;
+  padding: 0.75em 1.25em;
+}

@@ -39,7 +39,7 @@ function Compare() {
               <p>Shortlist your favourite properties and send enquiries in one click.</p>
             </div>
           </div>
-          <button>Search & Compare</button>
+          <button className="blue-button">Search & Compare</button>
         </div>
         <div className="bottom-picture">
         </div>
