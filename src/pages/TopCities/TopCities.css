@@ -26,11 +26,11 @@
   gap: 20px;
 }
 
-select:invalid,
-option[value=""] {
-  color: grey;
-}
-
-select {
-  color: black;
+.city-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  align-content: center;
+  padding: 0 40px 40px 40px;
 }
