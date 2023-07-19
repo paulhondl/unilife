@@ -17,7 +17,8 @@ const customStyles = {
     width: "80%",
     maxWidth: 800,
     padding: 30,
-    overflowY: "auto"
+    overflowY: "auto",
+    height: "100vh"
   },
 };
 

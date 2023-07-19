@@ -1,7 +1,7 @@
-
+import {Link} from "react-router-dom"
 
 function CityCard({city}) {
-
+  
   const {name, property_count, image_url} = city
 
   const cityCardStyles = {
@@ -29,10 +29,12 @@ function CityCard({city}) {
   }
 
   return (
-    <div style={cityCardStyles} className="city-card" onMouseEnter={handleMouseEnter} onMouseLeave={(handleMouseLeave)}>
-      <h2>{name}</h2>
-      <p>{property_count} {property_count > 1 ? "properties" : "property"}</p>
-    </div>
+    <Link to={city._id}>
+      <div style={cityCardStyles} className="city-card" onMouseEnter={handleMouseEnter} onMouseLeave={(handleMouseLeave)}>
+        <h2>{name}</h2>
+        <p>{property_count} {property_count > 1 ? "properties" : "property"}</p>
+      </div>
+    </Link>
   )
 
 }
