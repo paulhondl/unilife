@@ -1,10 +1,10 @@
+/* eslint-disable react/prop-types */
 import {Link} from "react-router-dom"
-import "./Accomodation.css"
+import "./AccomodationCard.css"
 
 
 function AccomodationCard({accomodation}) {
 
-  console.log(accomodation)
   return (
     <div className="accomodation-container">
       <p>This home has {accomodation.bathroom_count} bathrooms</p>
