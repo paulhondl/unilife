@@ -1,8 +1,11 @@
+.accomodations-grid {
+  margin-inline: 40px;
+}
+
 .city-data {
-  /* background-color: rgba(246, 250, 253, 1); */
-  background-color: lightgreen;
+  background-color: rgba(246, 250, 253, 1);
   border-radius: 24px;
-  margin-block: 50px;
+  margin: 50px 40px;
   padding: 30px;
   display: flex;
   align-items: center;
@@ -10,13 +13,10 @@
   gap: 30px;
 }
 
-.city-data > * {
-
-}
-
 .city-data img,
 .city-description {
   width: 50%;
+  max-height: 100%;
 }
 
 .city-description h3 + p {
@@ -26,6 +26,7 @@
 @media (max-width: 870px) {
   .city-data{
     flex-direction: column;
+    margin-inline: 25px;
   }
 
   .city-description {
@@ -34,5 +35,11 @@
 
   .city-data img {
     width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .city-data {
+    margin-inline: 10px;
   }
 }

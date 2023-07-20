@@ -48,7 +48,7 @@ function Accomodations() {
           </>
         }
         </div>
-        <img src="../../../public/Rectangle 11.png" alt="students having a ball" />
+        <img src="Rectangle 11.png" alt="students having a ball" />
       </section>
     </div>
     
