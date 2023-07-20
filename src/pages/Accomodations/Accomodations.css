@@ -11,9 +11,28 @@
 }
 
 .city-data > * {
-  flex-basis: 45%;
-  height: 90%;
+
 }
+
+.city-data img,
+.city-description {
+  width: 50%;
+}
+
 .city-description h3 + p {
   margin-block: 20px;
+}
+
+@media (max-width: 870px) {
+  .city-data{
+    flex-direction: column;
+  }
+
+  .city-description {
+    width: 100%;
+  }
+
+  .city-data img {
+    width: 100%;
+  }
 }
