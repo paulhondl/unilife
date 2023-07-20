@@ -32,4 +32,7 @@
   .footer-container {
     padding-inline: 15px;
   }
+  .footer-right {
+    text-align: right;
+  }
 }
