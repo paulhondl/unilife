@@ -1,0 +1,19 @@
+.city-data {
+  /* background-color: rgba(246, 250, 253, 1); */
+  background-color: lightgreen;
+  border-radius: 24px;
+  margin-block: 50px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.city-data > * {
+  flex-basis: 45%;
+  height: 90%;
+}
+.city-description h3 + p {
+  margin-block: 20px;
+}

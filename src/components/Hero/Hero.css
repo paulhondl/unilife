@@ -1,0 +1,23 @@
+.hero-container {
+  height: 300px;
+  color: white;
+  text-align: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url("/cover-img.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.hero-text {
+  width: 75%
+}
+
+.hero-container h1 {
+  margin-bottom: 25px;
+}
+
+.hero-container p {
+  font-size: 1.25rem;
+  line-height: 1.5;
+}

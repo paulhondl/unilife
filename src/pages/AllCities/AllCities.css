@@ -1,8 +1,8 @@
-.all-cities-container {
+.all-cities-grid {
   padding-block: 50px;
 }
 
-.all-cities-container h2 {
+.all-cities-grid h2 {
   text-align: center;
   margin-bottom: 20px;
   font-weight: 500;

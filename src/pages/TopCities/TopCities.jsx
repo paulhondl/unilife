@@ -1,55 +1,59 @@
 import {useEffect, useState} from "react"
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
+import Hero from "../../components/Hero/Hero";
 import CityCard from "../../components/CityCard/CityCard";
 import Compare from "../../components/Compare/Compare";
 import "./TopCities.css"
 
 function TopCities() {
 
-  const [topCities, setTopCities] = useState([]);
+  const [allCities, setAllCities] = useState([]);
   const [selectedCity, setSelectedCity] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("https://unilife-server.herokuapp.com/cities?limit=20")
       .then(response => response.json())
-      .then(data => setTopCities(data.response))
+      .then(data => setAllCities(data.response))
       .catch(error => console.log(error))
   }, [])
 
+  // function handleCitySearch(event) {
+  //   event.preventDefault();
+  //   if(selectedCity && topCities.length) {
+  //     const chosenCity = topCities.find(city => city.name = selectedCity)
+  //     fetch(`https://unilife-server.herokuapp.com/cities/${chosenCity._id}`)
+  //       .then(response => response.json())
+  //       .then(data => console.log(data.data[0]))
+  //   }
+  // }
+
   function handleCitySearch(event) {
     event.preventDefault();
-    if(selectedCity && topCities.length) {
-      const chosenCity = topCities.find(city => city.name = selectedCity)
-      fetch(`https://unilife-server.herokuapp.com/cities/${chosenCity._id}`)
-        .then(response => response.json())
-        .then(data => console.log(data.data[0]))
+    if(selectedCity && allCities.length) {
+      const chosenCity = allCities.find(city => city.name.toLowerCase() == selectedCity.toLowerCase())
+      navigate(chosenCity._id)
     }
-  }
-
-  function getSelectedCity(event) {
-    setSelectedCity(event.target.value);
   }
 
   return (
     <>
       <div className="top-cities-container">
-        <section className="find-homes-section">
-          <div className="find-homes-text">
-            <h1>Find student homes with bills included</h1>
-            <p>A simple and faster way to search for student accommodation</p>
-          </div>
+       <Hero 
+        heading="Find student homes with bills included"
+        subHeading="A simple and faster way to search for student accommodation"
+      />
+        
+        <div className="city-cards">
           <form className="find-city-form" onSubmit={handleCitySearch}>
-            <select required onChange={getSelectedCity} name="find-homes-select" id="find-homes-select">
+            <select required onChange={(event) => setSelectedCity(event.target.value)} name="find-homes-select" id="find-homes-select">
               <option value="">Search by city</option>
-              {topCities.length && topCities.map(city => <option key={city._id} value={city.name}>{city.name}</option>)}
+              {allCities.length && allCities.map(city => <option key={city._id} value={city.name}>{city.name}</option>)}
             </select>
-            <button className="blue-button">Find Homes</button>
+            <button type="submit" className="blue-button">Find Homes</button>
           </form>
-        </section>
-        <div className="spacer" style={{height: 100}}></div>
-        <section className="city-cards">
-          {topCities.length && topCities.slice(0,9).map(city => <CityCard key={city._id} city={city} />)}
-        </section>
+          {allCities.length && allCities.slice(0,9).map(city => <CityCard key={city._id} city={city} />)}
+        </div>
         <Link to="all-cities" className="blue-button all-cities-btn">See All Cities</Link>
       </div>
       <Compare />

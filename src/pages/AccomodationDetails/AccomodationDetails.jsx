@@ -13,7 +13,6 @@ function AccomodationDetails() {
       .then(data => setAccomodation(data))
   }, [])
 
-  console.log("params inside AccomodationDetails:", accomodation_id)
   return (
     <div>This property is located in {accomodation?.address?.street}</div>
   )
