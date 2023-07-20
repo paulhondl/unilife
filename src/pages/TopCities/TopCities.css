@@ -33,5 +33,13 @@
 @media (max-width: 600px) {
   .find-city-form {
     flex-direction: column;
+    width: 60%;
+    padding: 10px;
+  }
+  .find-city-form > * {
+    font-size: 0.75rem;
+  }
+  .find-city-form .blue-button {
+    font-size: 0.75rem;
   }
 }
