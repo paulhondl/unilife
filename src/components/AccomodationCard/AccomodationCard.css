@@ -1,0 +1,41 @@
+.accomodation-card-container {
+  width: 300px;
+  height: 400px;
+  border: 1px solid rgba(206, 211, 216, 1);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.accomodation-card-container > * {
+  height: 50%;
+}
+
+.accomodation-card-top {
+  
+  background-size: cover;
+}
+
+.accomodation-numbers {
+  color: white;
+  background-color: rgba(58, 82, 149, 1);
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bed-and-bath {
+  display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.accomodation-card-container a {
+  border-top: 1px solid rgba(206, 211, 216, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+

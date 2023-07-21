@@ -7,6 +7,15 @@ function AccomodationDetails() {
 
   const [accomodation, setAccomodation] = useState({});
 
+  /* 
+    bathroom_count
+    bedroom_count
+    bedroom_prices.bedroom_one
+    property_type
+    furnished
+    address.street, address.city, address.postcode
+  */
+
   useEffect(() => {
     fetch(`https://unilife-server.herokuapp.com/properties/${accomodation_id}`)
       .then(response => response.json())

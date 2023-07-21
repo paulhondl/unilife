@@ -1,5 +1,14 @@
+.accomodations-container h2 {
+  margin-left: 40px;
+  margin-block: 30px;
+}
+
 .accomodations-grid {
   margin-inline: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
 .city-data {

@@ -22,9 +22,6 @@ function Accomodations() {
       .then(data => setCity(data.data[0]))
   }, [])
 
-  useEffect(() => {
-    console.log(city)
-  }, [city])
   return (
     <div className="accomodations-container">
       <Hero 
