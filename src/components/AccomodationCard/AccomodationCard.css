@@ -10,15 +10,10 @@
   height: 50%;
 }
 
-.accomodation-card-top {
-  
-  background-size: cover;
-}
-
 .accomodation-numbers {
   color: white;
   background-color: rgba(58, 82, 149, 1);
-  padding: 10px;
+  padding: 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -36,15 +31,27 @@
   gap: 5px;
 }
 
+.accomodation-card-bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.accomodation-facts {
+  padding: 15px;
+}
+
+.property-type-furnished {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
 .accomodation-address,
 .accomodation-address span {
   font-size: 0.75rem;
   display: flex;
   align-items: center;
-}
-
-.accomodation-address {
-  padding: 10px;
 }
 
 .accomodation-card-container a {
@@ -53,5 +60,11 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
+  flex-grow: 1;
+}
+
+.accomodation-card-container a:hover
+{
+  opacity: 0.85;
 }
 

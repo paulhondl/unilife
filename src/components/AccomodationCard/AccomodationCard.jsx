@@ -17,7 +17,8 @@ function AccomodationCard({accomodation}) {
   */
 
   const accomodationCardTopStyles = {
-    backgroundImage: `url("${accomodation?.images[0]}")`
+    backgroundImage: `url("${accomodation?.images[0]}")`,
+    backgroundSize: "cover"
   }
 
   return (
@@ -26,13 +27,21 @@ function AccomodationCard({accomodation}) {
       </div>
       <div className="accomodation-card-bottom">
         <div className="accomodation-numbers">
-          <p>&#163;{accomodation?.bedroom_prices?.bedroom_one}</p>
+          <p>&#163;{accomodation?.bedroom_prices?.bedroom_one}
+          <br />
+          <small>pppw including bills</small>
+          </p>
           <div className="bed-and-bath">
             <p><span><img src="bed_FILL0_wght300_GRAD0_opsz48.png" alt="bedrooms" /></span>{accomodation?.bedroom_count}</p>
             <p><span><img src="bathtub_FILL0_wght300_GRAD0_opsz48.png" alt="bedrooms" /></span>{accomodation?.bathroom_count}</p>
           </div>
+        
         </div>
         <div className="accomodation-facts">
+          <div className="property-type-furnished">
+            <p>{accomodation?.property_type}</p>
+            <p>{accomodation?.furnished}</p>
+          </div>
           <p className="accomodation-address">
             <span><img src="../../../public/home_pin_FILL0_wght300_GRAD0_opsz48 1.png" alt="home-pin" />
             </span>
