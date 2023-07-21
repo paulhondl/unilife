@@ -33,7 +33,7 @@ function AccomodationCard({accomodation}) {
             <p>{accomodation?.furnished}</p>
           </div>
           <p className="accomodation-address">
-            <span><img src="../../../public/home_pin_FILL0_wght300_GRAD0_opsz48 1.png" alt="home-pin" />
+            <span><img src="home_pin_FILL0_wght300_GRAD0_opsz48 1.png" alt="home-pin" />
             </span>
             {`${accomodation?.address?.street}, ${accomodation?.address?.city}, ${accomodation?.address?.postcode} `}
           </p>
