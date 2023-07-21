@@ -18,7 +18,7 @@
 .accomodation-numbers {
   color: white;
   background-color: rgba(58, 82, 149, 1);
-  padding: 5px 10px;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -26,9 +26,25 @@
 
 .bed-and-bath {
   display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.bed-and-bath > * {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 5px;
+}
+
+.accomodation-address,
+.accomodation-address span {
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.accomodation-address {
+  padding: 10px;
 }
 
 .accomodation-card-container a {
