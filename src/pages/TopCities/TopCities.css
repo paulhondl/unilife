@@ -14,14 +14,14 @@
   gap: 20px;
 }
 
-.city-cards {
+.city-cards-grid {
   position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
   align-content: center;
-  padding: 100px 40px 40px 40px;
+  padding-block: 100px 40px;
 }
 
 .all-cities-btn {

@@ -44,7 +44,7 @@ function TopCities() {
         subHeading="A simple and faster way to search for student accommodation"
       />
         
-        <div className="city-cards">
+        <div className="city-cards-grid">
           <form className="find-city-form" onSubmit={handleCitySearch}>
             <select required onChange={(event) => setSelectedCity(event.target.value)} name="find-homes-select" id="find-homes-select">
               <option value="">Search by city</option>
