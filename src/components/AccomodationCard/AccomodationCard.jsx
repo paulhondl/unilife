@@ -5,20 +5,10 @@ import "./AccomodationCard.css"
 
 function AccomodationCard({accomodation}) {
 
-  console.log(accomodation)
-
-   /* 
-    bathroom_count
-    bedroom_count
-    bedroom_prices.bedroom_one
-    property_type
-    furnished
-    address.street, address.city, address.postcode
-  */
-
   const accomodationCardTopStyles = {
     backgroundImage: `url("${accomodation?.images[0]}")`,
-    backgroundSize: "cover"
+    backgroundSize: "cover",
+    backgroundPosition: "center"
   }
 
   return (

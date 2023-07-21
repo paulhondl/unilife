@@ -4,7 +4,7 @@
 }
 
 .accomodations-grid {
-  margin-inline: 40px;
+  margin-inline: 5px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
