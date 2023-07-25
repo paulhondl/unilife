@@ -14,6 +14,10 @@ body {
   --blue-bg: #00A2E1;
 }
 
+.container {
+  padding-inline: 40px;
+}
+
 a {
   all: unset;
   cursor: pointer;

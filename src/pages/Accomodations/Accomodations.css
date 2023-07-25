@@ -1,4 +1,29 @@
-.accomodations-container h2 {
+.filters {
+  width: 90%;
+  padding: 20px 30px;
+  position: absolute;
+  top: 0;
+  transform: translateY(-50%);
+  box-shadow: 0px 12px 24px -12px rgba(0, 0, 0, 0.5);
+  background-color: white;
+  color: black;
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.accomodations-grid-container {
+  position: relative;
+}
+
+.accomodations-grid-container h2 {
   text-align: center;
   margin-block: 30px;
 }
@@ -9,6 +34,7 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  position: relative
 }
 
 .city-data {

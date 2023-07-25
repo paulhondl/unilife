@@ -14,6 +14,7 @@ function AllCities() {
       .catch(error => console.log(error))
   }, [])
 
+
   useEffect(() =>
   window.scrollTo(0,0),[])
 
@@ -22,8 +23,9 @@ function AllCities() {
       <Hero 
         heading="Student Accomodation"
         subHeading="UniLife have student accommodation available across the UK.
-        Whatever you’re after, we can help you find the right student accommodation for you."
+        Whatever you're after, we can help you find the right student accommodation for you."
       />
+     
       <div className="all-cities-grid">
         <h2>Search by City</h2>
         <Link className="city-name-cards-container">{allCities.map(city => <div className="city-name-card" key={city.id}>{city.name}</div>)}</Link>

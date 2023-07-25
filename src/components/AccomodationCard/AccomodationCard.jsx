@@ -17,7 +17,7 @@ function AccomodationCard({accomodation}) {
       </div>
       <div className="accomodation-card-bottom">
         <div className="accomodation-numbers">
-          <p>&#163;{accomodation?.bedroom_prices?.bedroom_one}
+          <p>&#163;{accomodation?.rent}
           <br />
           <small>pppw including bills</small>
           </p>

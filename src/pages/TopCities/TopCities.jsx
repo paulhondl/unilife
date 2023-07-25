@@ -18,16 +18,6 @@ function TopCities() {
       .catch(error => console.log(error))
   }, [])
 
-  // function handleCitySearch(event) {
-  //   event.preventDefault();
-  //   if(selectedCity && topCities.length) {
-  //     const chosenCity = topCities.find(city => city.name = selectedCity)
-  //     fetch(`https://unilife-server.herokuapp.com/cities/${chosenCity._id}`)
-  //       .then(response => response.json())
-  //       .then(data => console.log(data.data[0]))
-  //   }
-  // }
-
   function handleCitySearch(event) {
     event.preventDefault();
     if(selectedCity && allCities.length) {
