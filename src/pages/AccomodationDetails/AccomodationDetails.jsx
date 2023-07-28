@@ -1,11 +1,19 @@
 import {useState, useEffect} from "react"
-import {useParams} from "react-router-dom"
+import {Link, useParams} from "react-router-dom"
+import {FiArrowLeftCircle} from "react-icons/fi"
 import "./AccomodationDetails.css"
 
 function AccomodationDetails() {
   const {accomodation_id} = useParams();
 
   const [accomodation, setAccomodation] = useState({});
+
+  useEffect(() => {
+    fetch(`https://unilife-server.herokuapp.com/properties/${accomodation_id}`)
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.log(error))
+  }, [])
 
   /* 
     bathroom_count
@@ -23,7 +31,13 @@ function AccomodationDetails() {
   }, [])
 
   return (
-    <div>This property is located in {accomodation?.address?.street}</div>
+    <>
+      <div className="back-link">
+        <Link to=".." relative="path"><span className="left-circle"><FiArrowLeftCircle className="left-circle-icon" /></span> <p>Back to search</p></Link>
+      </div>
+      
+      <div>This property is located in {accomodation?.address?.street}</div>
+    </>
   )
 }
 

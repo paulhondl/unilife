@@ -31,6 +31,23 @@ function Accomodations() {
     }
   }
 
+  // Each time a query parameter changes, a POST request should be sent
+
+  // useEffect(() => {
+  //   fetch(URL, {
+  //     method: "POST",
+  //     headers: { 'Content-Type': 'application/json' },
+  //     body: JSON.stringify(query)
+  // })
+  // .then(response => response.json())
+  // .then(data => {
+  //     console.log(data);
+  // })
+  // .catch(error => {
+  //     console.error(error);
+  // });
+  // }, [query])
+
   useEffect(() => {
     setBathrooms(Array.from(new Set(accomodations.map(accomodation => accomodation.bathroom_count).sort((a,b) => a - b))))
     setBedrooms(Array.from(new Set(accomodations.map(accomodation => accomodation.bedroom_count).sort((a,b) => a - b))))

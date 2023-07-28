@@ -48,9 +48,3 @@
     font-size: 0.75rem;
   }
 }
-
-@media(max-width: 375px) {
-  .top-cities-hero {
-    padding-bottom: 200px;
-  }
-}
