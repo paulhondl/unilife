@@ -2,27 +2,37 @@ import {useEffect, useState} from "react"
 import {useParams} from "react-router-dom"
 import Hero from "../../components/Hero/Hero";
 import AccomodationCard from "../../components/AccomodationCard/AccomodationCard";
+import axios from "axios"
 import "./Accomodations.css"
 
 function Accomodations() {
   const {city_id} = useParams();
 
+  // const test = ["a", "b"];
+  // let placeholder = test[0];
+  // test[0] = test[1];
+  // test[1] = placeholder;
+  // alert(test)
+  
   const [accomodations, setAccomodations] = useState([])
   const [city, setCity] = useState({})
   const [query, setQuery] = useState({city_id})
-  const [bedrooms, setBedrooms] = useState([])
-  const [bathrooms, setBathrooms] = useState([])
-  const [rents, setRents] = useState([])
-  const [propertyTypes, setPropertyTypes] = useState([])
+
+  // const [bedrooms, setBedrooms] = useState([])
+  // const [bathrooms, setBathrooms] = useState([])
+  // const [rents, setRents] = useState([])
+  // const [propertyTypes, setPropertyTypes] = useState([])
 
     function handleFilterChange(filter, value) {
-    if(value) {
-      setQuery(prevQuery => {
-        return {
-          ...prevQuery,
-          [filter]: value
-      }})
-    } else {
+      if(value)
+      {
+        setQuery(prevQuery => {
+          return {
+            ...prevQuery,
+            [filter]: value
+        }})
+      }
+    else {
       setQuery(prevQuery => {
         const copy = {...prevQuery}
         delete copy[filter]
@@ -31,33 +41,7 @@ function Accomodations() {
     }
   }
 
-  // Each time a query parameter changes, a POST request should be sent
-
-  // useEffect(() => {
-  //   fetch(URL, {
-  //     method: "POST",
-  //     headers: { 'Content-Type': 'application/json' },
-  //     body: JSON.stringify(query)
-  // })
-  // .then(response => response.json())
-  // .then(data => {
-  //     console.log(data);
-  // })
-  // .catch(error => {
-  //     console.error(error);
-  // });
-  // }, [query])
-
-  useEffect(() => {
-    setBathrooms(Array.from(new Set(accomodations.map(accomodation => accomodation.bathroom_count).sort((a,b) => a - b))))
-    setBedrooms(Array.from(new Set(accomodations.map(accomodation => accomodation.bedroom_count).sort((a,b) => a - b))))
-    setRents(Array.from(new Set(accomodations.map(accomodation => accomodation.rent).sort((a,b) => b - a))))
-    setPropertyTypes(Array.from(new Set(accomodations.map(accomodation => accomodation.property_type).sort())))
-  }, [accomodations])
-
-    useEffect(() => {
-      console.log(query)
-    }, [query])
+  useEffect(() => {console.log(query)}, [query])
 
   // Get ALL properties in a SINGLE city
 
@@ -67,7 +51,24 @@ function Accomodations() {
       .then(data => setAccomodations(data.response))
   }, [])
 
-  // Get information about a SINGLE City
+  // Each time a query parameter changes, a POST request should be sent
+
+  useEffect(() => {
+    axios.post("https://unilife-server.herokuapp.com/properties/filter", {query})
+    .then(res =>{
+      setAccomodations(res.data.response)
+    })
+    .catch(err => console.log(err))
+  }, [query])
+
+  // useEffect(() => {
+  //   setBedrooms(Array.from(new Set(accomodations.map(accomodation => accomodation.bedroom_count).sort((a,b) => a - b))))
+  //   setBathrooms(Array.from(new Set(accomodations.map(accomodation => accomodation.bathroom_count).sort((a,b) => a - b))))
+  //   setRents(Array.from(new Set(accomodations.map(accomodation => accomodation.rent).sort((a,b) => b - a))))
+  //   setPropertyTypes(Array.from(new Set(accomodations.map(accomodation => accomodation.property_type).sort())))
+  // }, [accomodations])
+
+  // Get information about a SINGLE City for the bottom part of the website
 
   useEffect(() => {
     fetch(`https://unilife-server.herokuapp.com/cities/${city_id}`)
@@ -86,35 +87,35 @@ function Accomodations() {
         <div className="filters">
           <div className="filter">
             <label htmlFor="bedroom_count">Min Bedroom</label>
-            <select id="bedroom_count" onChange={(e) => handleFilterChange(e.target.id, parseInt(e.target.value))} >
+            <select id="bedroom_count" onChange={(e) => handleFilterChange(e.target.id, e.target.value)} >
               <option value="">Any bedroom</option>
-              {bedrooms?.map((bedroom, index) => <option key={index}>{bedroom}</option>)}
+              {accomodations.length > 0 && Array.from(new Set(accomodations.map(accomodation => accomodation.bedroom_count).sort((a,b) => a - b))).map((bedroom, index) => <option value={bedroom} key={index}>{bedroom}</option>)} 
             </select>
           </div>
           <div className="filter">
             <label htmlFor="bathroom_count">Min Bathroom</label>
-            <select id="bathroom_count" onChange={(e) => handleFilterChange(e.target.id, parseInt(e.target.value))}>
+            <select id="bathroom_count" onChange={(e) => handleFilterChange(e.target.id, e.target.value)}>
               <option value="">Any bathroom</option>
-            {bathrooms?.map((bathroom, index) => <option key={index}>{bathroom}</option>)}
+            {accomodations.length > 0 && Array.from(new Set(accomodations.map(accomodation => accomodation.bathroom_count).sort((a,b) => a - b))).map((bathroom, index) => <option value={bathroom} key={index}>{bathroom}</option>)}
             </select>
           </div>
           <div className="filter">
             <label htmlFor="rent">Max Price</label>
-            <select id="rent" onChange={(e) => handleFilterChange(e.target.id, parseInt(e.target.value))}>
+            <select id="rent" onChange={(e) => handleFilterChange(e.target.id, e.target.value)}>
               <option value="">Any price</option>
-              {rents?.map((rent, index) => <option key={index}>{rent}</option>)}
+              {accomodations.length > 0 && Array.from(new Set(accomodations.map(accomodation => accomodation.rent).sort((a,b) => b - a))).map((rent, index) => <option value={rent}  key={index}>{rent}</option>)}
             </select>
           </div>
           <div className="filter">
             <label htmlFor="property_type">Home Type</label>
             <select id="property_type" onChange={(e) => handleFilterChange(e.target.id, e.target.value)}>
               <option value="">Any type</option>
-              {propertyTypes?.map((propertyType, index) => <option key={index}>{propertyType}</option>)
-              }
+              {accomodations.length > 0 && Array.from(new Set(accomodations.map(accomodation => accomodation.property_type).sort())).map((propertyType, index) => <option value={propertyType} key={index}>{propertyType}</option>)
+              } 
             </select>
           </div>
         </div>
-        <h2>{accomodations?.length} homes in {accomodations[0]?.address?.city} </h2>
+        <h2>{accomodations?.length} {accomodations?.length === 1 ? "home" : "homes"} in {accomodations[0]?.address?.city} </h2>
         <div className="accomodations-grid">
         {accomodations?.map(accomodation => <AccomodationCard key={accomodation._id} accomodation={accomodation} />)}
         </div>
