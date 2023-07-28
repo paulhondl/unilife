@@ -1,11 +1,12 @@
 .hero-container {
-  height: 300px;
+  min-height: 300px;
+  padding-top: 30px;
   color: white;
   text-align: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url("/cover-img.png");
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   gap: 30px;
 }
 
@@ -23,6 +24,9 @@
 }
 
 @media (max-width: 680px) {
+  .hero-text {
+    width: 90%;
+  }
   .hero-container h1 {
     font-size: 2rem;
   }
@@ -30,3 +34,10 @@
     font-size: 1rem;
   }
 }
+
+/* @media (max-width: 400px) {
+  .hero-container {
+    padding-bottom: 100px;
+  }
+  
+} */

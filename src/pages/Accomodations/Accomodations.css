@@ -4,6 +4,9 @@
   position: absolute;
   top: 0;
   transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   box-shadow: 0px 12px 24px -12px rgba(0, 0, 0, 0.5);
   background-color: white;
   color: black;
@@ -21,6 +24,8 @@
 
 .accomodations-grid-container {
   position: relative;
+  padding-top: 70px;
+  padding-inline: 40px;
 }
 
 .accomodations-grid-container h2 {
@@ -58,7 +63,22 @@
   margin-block: 20px;
 }
 
+@media (max-width: 1050px) {
+  .filters {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .filters label {
+    display: none;
+  }
+}
+
 @media (max-width: 870px) {
+  .accomodations-grid-container {
+    padding-inline: 25px;
+  }
+  .filter select {
+    font-size: 0.9rem;
+  }
   .city-data{
     flex-direction: column;
     margin-inline: 25px;
@@ -74,6 +94,13 @@
 }
 
 @media (max-width: 600px) {
+  .accomodations-grid-container {
+    padding-top: 130px;
+    padding-inline: 10px;
+  }
+  .filters {
+    grid-template-columns: 1fr;
+  }
   .city-data {
     margin-inline: 10px;
   }

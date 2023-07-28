@@ -33,13 +33,24 @@
 @media (max-width: 600px) {
   .find-city-form {
     flex-direction: column;
-    width: 60%;
+    align-items: center;
+    width: 75%;
     padding: 10px;
+    gap: 5px;
   }
   .find-city-form > * {
-    font-size: 0.75rem;
+    font-size: 1rem;
+  }
+  .find-city-form button.blue-button {
+    font-size: 1rem;
   }
   .find-city-form .blue-button {
     font-size: 0.75rem;
+  }
+}
+
+@media(max-width: 375px) {
+  .top-cities-hero {
+    padding-bottom: 200px;
   }
 }

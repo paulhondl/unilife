@@ -10,8 +10,12 @@ function Accomodations() {
   const [accomodations, setAccomodations] = useState([])
   const [city, setCity] = useState({})
   const [query, setQuery] = useState({city_id})
+  const [bedrooms, setBedrooms] = useState([])
+  const [bathrooms, setBathrooms] = useState([])
+  const [rents, setRents] = useState([])
+  const [propertyTypes, setPropertyTypes] = useState([])
 
-  function handleFilterChange(filter, value) {
+    function handleFilterChange(filter, value) {
     if(value) {
       setQuery(prevQuery => {
         return {
@@ -26,6 +30,13 @@ function Accomodations() {
         })
     }
   }
+
+  useEffect(() => {
+    setBathrooms(Array.from(new Set(accomodations.map(accomodation => accomodation.bathroom_count).sort((a,b) => a - b))))
+    setBedrooms(Array.from(new Set(accomodations.map(accomodation => accomodation.bedroom_count).sort((a,b) => a - b))))
+    setRents(Array.from(new Set(accomodations.map(accomodation => accomodation.rent).sort((a,b) => b - a))))
+    setPropertyTypes(Array.from(new Set(accomodations.map(accomodation => accomodation.property_type).sort())))
+  }, [accomodations])
 
     useEffect(() => {
       console.log(query)
@@ -49,9 +60,9 @@ function Accomodations() {
 
   return (
     <div className="accomodations-container">
-      <Hero 
+      <Hero className="accomodations-hero"
         heading="Search Accomodation"
-        subHeading="Whatever you’re after, we can help you find the right student accommodation for you. "
+        subHeading="Whatever you're after, we can help you find the right student accommodation for you. "
       />
        
       <section className="accomodations-grid-container">
@@ -59,45 +70,29 @@ function Accomodations() {
           <div className="filter">
             <label htmlFor="bedroom_count">Min Bedroom</label>
             <select id="bedroom_count" onChange={(e) => handleFilterChange(e.target.id, parseInt(e.target.value))} >
-              <option value="">beds</option>
-              {accomodations
-                .map(acc => acc.bedroom_count)
-                .sort((a,b) => a - b)
-                .map((bedroomCount, index) => <option key={index}>{bedroomCount}</option>)
-              }
+              <option value="">Any bedroom</option>
+              {bedrooms?.map((bedroom, index) => <option key={index}>{bedroom}</option>)}
             </select>
           </div>
           <div className="filter">
             <label htmlFor="bathroom_count">Min Bathroom</label>
             <select id="bathroom_count" onChange={(e) => handleFilterChange(e.target.id, parseInt(e.target.value))}>
-              <option value="">bathrooms</option>
-            {accomodations
-              .map(acc => acc.bathroom_count)
-              .sort((a,b) => a - b)
-              .map((bathroomCount, index) => <option key={index}>{bathroomCount}</option>)
-            }
+              <option value="">Any bathroom</option>
+            {bathrooms?.map((bathroom, index) => <option key={index}>{bathroom}</option>)}
             </select>
           </div>
           <div className="filter">
             <label htmlFor="rent">Max Price</label>
             <select id="rent" onChange={(e) => handleFilterChange(e.target.id, parseInt(e.target.value))}>
-              <option value="">price</option>
-            {accomodations
-                  .map(acc => acc.rent)
-                  .sort((a,b) => b - a)
-                  .map((rent, index) => <option key={index}>{rent}</option>)
-              }
-             
+              <option value="">Any price</option>
+              {rents?.map((rent, index) => <option key={index}>{rent}</option>)}
             </select>
           </div>
           <div className="filter">
             <label htmlFor="property_type">Home Type</label>
             <select id="property_type" onChange={(e) => handleFilterChange(e.target.id, e.target.value)}>
-              <option value="">type</option>
-              {accomodations
-                .map(accomodation => accomodation.property_type)
-                .sort()
-                .map((property_type, index) => <option key={index}>{property_type}</option>)
+              <option value="">Any type</option>
+              {propertyTypes?.map((propertyType, index) => <option key={index}>{propertyType}</option>)
               }
             </select>
           </div>

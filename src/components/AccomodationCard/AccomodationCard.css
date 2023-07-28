@@ -1,12 +1,13 @@
 .accomodation-card-container {
   width: 300px;
-  height: 400px;
+  min-height: 400px;
   border: 1px solid rgba(206, 211, 216, 1);
   border-radius: 24px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
-.accomodation-card-container > * {
+.accomodation-card-top {
+  border-radius: 24px 24px 0 0;
   height: 50%;
 }
 
@@ -60,7 +61,7 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
-  flex-grow: 1;
+  /* flex-grow: 1; */
 }
 
 .accomodation-card-container a:hover
@@ -68,10 +69,9 @@
   opacity: 0.85;
 }
 
-/* @media (max-width: 750px) {
+@media (max-width: 750px) {
   .accomodation-card-container {
     width: 100%;
   }
-} */
-
+}
 
