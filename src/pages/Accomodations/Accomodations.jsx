@@ -8,15 +8,10 @@ import "./Accomodations.css"
 function Accomodations() {
   const {city_id} = useParams();
 
-  // const test = ["a", "b"];
-  // let placeholder = test[0];
-  // test[0] = test[1];
-  // test[1] = placeholder;
-  // alert(test)
-  
   const [accomodations, setAccomodations] = useState([])
   const [city, setCity] = useState({})
   const [query, setQuery] = useState({city_id})
+  const [filters, setFilters] = useState([])
 
   // const [bedrooms, setBedrooms] = useState([])
   // const [bathrooms, setBathrooms] = useState([])
@@ -48,7 +43,10 @@ function Accomodations() {
   useEffect(() => {
     fetch(`https://unilife-server.herokuapp.com/properties/city/${city_id}`)
       .then(response => response.json())
-      .then(data => setAccomodations(data.response))
+      .then(data => {
+        setAccomodations(data.response)
+        setFilters(data.response)
+      })
   }, [])
 
   // Each time a query parameter changes, a POST request should be sent
@@ -89,28 +87,28 @@ function Accomodations() {
             <label htmlFor="bedroom_count">Min Bedroom</label>
             <select id="bedroom_count" onChange={(e) => handleFilterChange(e.target.id, e.target.value)} >
               <option value="">Any bedroom</option>
-              {accomodations.length > 0 && Array.from(new Set(accomodations.map(accomodation => accomodation.bedroom_count).sort((a,b) => a - b))).map((bedroom, index) => <option value={bedroom} key={index}>{bedroom}</option>)} 
+              {filters.length > 0 && Array.from(new Set(filters.map(filter => filter.bedroom_count).sort((a,b) => a - b))).map((bedroom, index) => <option value={bedroom} key={index}>{bedroom}</option>)} 
             </select>
           </div>
           <div className="filter">
             <label htmlFor="bathroom_count">Min Bathroom</label>
             <select id="bathroom_count" onChange={(e) => handleFilterChange(e.target.id, e.target.value)}>
               <option value="">Any bathroom</option>
-            {accomodations.length > 0 && Array.from(new Set(accomodations.map(accomodation => accomodation.bathroom_count).sort((a,b) => a - b))).map((bathroom, index) => <option value={bathroom} key={index}>{bathroom}</option>)}
+            {filters.length > 0 && Array.from(new Set(filters.map(filter => filter.bathroom_count).sort((a,b) => a - b))).map((bathroom, index) => <option value={bathroom} key={index}>{bathroom}</option>)}
             </select>
           </div>
           <div className="filter">
             <label htmlFor="rent">Max Price</label>
             <select id="rent" onChange={(e) => handleFilterChange(e.target.id, e.target.value)}>
               <option value="">Any price</option>
-              {accomodations.length > 0 && Array.from(new Set(accomodations.map(accomodation => accomodation.rent).sort((a,b) => b - a))).map((rent, index) => <option value={rent}  key={index}>{rent}</option>)}
+              {filters.length > 0 && Array.from(new Set(filters.map(filter => filter.rent).sort((a,b) => b - a))).map((rent, index) => <option value={rent}  key={index}>{rent}</option>)}
             </select>
           </div>
           <div className="filter">
             <label htmlFor="property_type">Home Type</label>
             <select id="property_type" onChange={(e) => handleFilterChange(e.target.id, e.target.value)}>
               <option value="">Any type</option>
-              {accomodations.length > 0 && Array.from(new Set(accomodations.map(accomodation => accomodation.property_type).sort())).map((propertyType, index) => <option value={propertyType} key={index}>{propertyType}</option>)
+              {filters.length > 0 && Array.from(new Set(filters.map(filter => filter.property_type).sort())).map((propertyType, index) => <option value={propertyType} key={index}>{propertyType}</option>)
               } 
             </select>
           </div>
