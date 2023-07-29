@@ -4,6 +4,10 @@
   gap: 5px;
 }
 
+.check-mark {
+  color: rgba(58, 82, 149, 1);
+}
+
 .back-link a:hover {
   color: grey;
 }
@@ -18,8 +22,6 @@
 
 .details-top-right {
   padding: 20px 10px;
-  
-  
 }
 
 .accomodation-information {
@@ -31,6 +33,8 @@
 .accomodation-information h2 {
   text-align: center;
   border-bottom: 1px solid rgba(206, 211, 216, 1);
+  font-weight: 400;
+  margin-bottom: 20px;
 }
 
 .accomodation-specs {
@@ -52,7 +56,11 @@
 .spec p {
   font-weight: 600;
   color: rgba(58, 82, 149, 1);
-  font-size: 1.25rem;
+  font-size: 1.375rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
 }
 
 .detail-heart-icon-wrapper {

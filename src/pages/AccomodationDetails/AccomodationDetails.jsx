@@ -56,11 +56,11 @@ function AccomodationDetails() {
               <div className="accomodation-specs">
                 <div className="spec">
                   <h4>Bedrooms</h4>
-                  <p>{accomodation.bedroom_count}</p>
+                  <p><img src="../../../public/bed_FILL0_wght300_GRAD0_opsz48_blue.png" alt="bedrooms" /> {accomodation.bedroom_count}</p>
                 </div>
                 <div className="spec">
                   <h4>Bathrooms</h4>
-                  <p>{accomodation.bathroom_count}</p>
+                  <p><img src="../../../public/bathtub_FILL0_wght300_GRAD0_opsz48_blue.png" alt="bathtub" />{accomodation.bathroom_count}</p>
                 </div>
                 <div className="spec">
                   <h4>Property Type</h4>
@@ -86,6 +86,7 @@ function AccomodationDetails() {
             </div>
           </div>
         </div>
+        <GrCheckmark className="check-mark"/>
       </div>
   )
 }
