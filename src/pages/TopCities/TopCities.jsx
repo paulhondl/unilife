@@ -40,11 +40,11 @@ function TopCities() {
               <option value="">Search by city</option>
               {allCities.length && allCities.map(city => <option key={city._id} value={city.name}>{city.name}</option>)}
             </select>
-            <button type="submit" className="blue-button">Find Homes</button>
+            <button type="submit" className="button blue-button">Find Homes</button>
           </form>
           {allCities.length && allCities.slice(0,9).map(city => <CityCard key={city._id} city={city} />)}
         </div>
-        <Link to="all-cities" className="blue-button all-cities-btn">See All Cities</Link>
+        <Link to="all-cities" className="button blue-button all-cities-btn">See All Cities</Link>
       </div>
       <Compare />
     </>
