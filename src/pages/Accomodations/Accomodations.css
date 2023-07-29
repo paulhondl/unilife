@@ -35,12 +35,17 @@
 
 .accomodations-grid {
   margin-inline: 5px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-items: center;
   gap: 20px;
-  justify-content: center;
   position: relative
 }
+
+/* .accomodations-grid::after {
+  content: "";
+  flex: auto;
+} */
 
 .city-data {
   background-color: rgba(246, 250, 253, 1);

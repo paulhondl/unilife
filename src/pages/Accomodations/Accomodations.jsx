@@ -115,7 +115,7 @@ function Accomodations() {
         </div>
         <h2>{accomodations?.length} {accomodations?.length === 1 ? "home" : "homes"} in {accomodations[0]?.address?.city} </h2>
         <div className="accomodations-grid">
-        {accomodations?.map(accomodation => <AccomodationCard key={accomodation._id} accomodation={accomodation} />)}
+        {accomodations?.map(accomodation => <AccomodationCard className="accomodation-card" key={accomodation._id} accomodation={accomodation} />)}
         </div>
       </section>
 
