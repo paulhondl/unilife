@@ -7,7 +7,10 @@ import "./AccomodationDetails.css"
 
 function AccomodationDetails() {
 
-  let date = new Date();
+  let date = new Date()
+  let currentYear = date.getFullYear();
+
+  const months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
 
   const {accomodation_id} = useParams();
 
@@ -33,14 +36,8 @@ function AccomodationDetails() {
   useEffect(() => {
     fetch(`https://unilife-server.herokuapp.com/properties/${accomodation_id}`)
       .then(response => response.json())
-      .then(data => {
-        setAccomodation(data)
-        let myDate = new Date(data.availability)
-        console.log(myDate)
-      }
-        
-        )
-  }, [])
+      .then(data => setAccomodation(data))
+    }, [])
 
   return (
       <div className="details-container">
@@ -58,28 +55,28 @@ function AccomodationDetails() {
               </h2>
               <div className="accomodation-specs">
                 <div className="spec">
-                  <p>Bedrooms</p>
+                  <h4>Bedrooms</h4>
                   <p>{accomodation.bedroom_count}</p>
                 </div>
                 <div className="spec">
-                  <p>Bathrooms</p>
+                  <h4>Bathrooms</h4>
                   <p>{accomodation.bathroom_count}</p>
                 </div>
                 <div className="spec">
-                  <p>Property Type</p>
+                  <h4>Property Type</h4>
                   <p>{accomodation.property_type}</p>
                 </div>
                 <div className="spec">
-                  <p>Price</p>
-                  <p>{accomodation.rent}</p>
+                  <h4>Price</h4>
+                  <p>&#163;{accomodation.rent}</p>
                 </div>
                 <div className="spec">
-                  <p>Furnished Type</p>
+                  <h4>Furnished Type</h4>
                   <p>{accomodation.furnished}</p>
                 </div>
                 <div className="spec">
-                  <p>Available From</p>
-                  <p>{accomodation.availability} {date.getFullYear()}</p>
+                  <h4>Available From</h4>
+                  <p>{months.indexOf(accomodation?.availability?.toLowerCase().slice(0,3)) + 1}/{currentYear}</p>
                 </div>
               </div>
             </div>

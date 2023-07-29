@@ -36,7 +36,8 @@
 .accomodation-specs {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 100px 100px;
+  grid-template-rows: 70px 70px;
+  row-gap: 40px;
   justify-items: center;
   text-align: center;
 }
@@ -45,6 +46,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+}
+
+.spec p {
+  font-weight: 600;
+  color: rgba(58, 82, 149, 1);
+  font-size: 1.25rem;
 }
 
 .detail-heart-icon-wrapper {
