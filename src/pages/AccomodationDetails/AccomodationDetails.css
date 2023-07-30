@@ -132,16 +132,45 @@
 }
 
 .details-bottom {
+  margin-top: 50px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: 
-    "description key-features"
-    "bedroom-prices ."
+    "description bedroom-prices-list"
+    "key-features .";
+  gap: 20px;
+}
+
+.details-bottom > * h2 {
+  margin-bottom: 20px;
+}
+
+.description {
+  grid-area: description;
+}
+
+.bedroom-prices-list {
+  grid-area: bedroom-prices-list;
+  border: 1px solid rgba(206, 211, 216, 1);
+  border-radius: 24px;
 }
 
 .bedroom-price {
   display: flex;
   justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.bedroom-price:not(:last-child) {
+  border-bottom: 1px solid rgba(206, 211, 216, 1);
+}
+
+.key-features {
+  grid-area: key-features;
+}
+
+.features-list li {
+  margin-bottom: 15px;
 }
 
 @media (max-width: 1020px) {
@@ -155,4 +184,17 @@
     font-size: 1rem;
   }
 
+}
+
+@media (max-width: 800px) {
+  .details-bottom {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "description"
+      "key-features"
+      "bedroom-prices-list";
+    gap: 20px;
+  }
 }

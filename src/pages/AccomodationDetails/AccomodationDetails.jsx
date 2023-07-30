@@ -121,7 +121,7 @@ function AccomodationDetails() {
           </div>
           <div className="bedroom-prices">
             <h2>Bedroom Prices</h2>
-            <div className="prices-list">
+            <div className="bedroom-prices-list">
               {accomodation?.bedroom_prices && Object.entries(accomodation.bedroom_prices).map((price, index) => 
               <div className="bedroom-price" key={index} ><p>Bedroom {index + 1}</p><p>{price[1]}</p></div>
       )}
