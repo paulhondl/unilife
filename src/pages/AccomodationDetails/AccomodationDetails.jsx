@@ -3,6 +3,7 @@ import {Link, useParams} from "react-router-dom"
 import { FiArrowLeftCircle } from "react-icons/fi"
 import { GrCheckmark } from 'react-icons/gr';
 import {AiOutlineHeart} from "react-icons/ai"
+import Modal from 'react-modal';
 import "./AccomodationDetails.css"
 
 function AccomodationDetails() {
@@ -33,8 +34,36 @@ function AccomodationDetails() {
       const formerBigImage = swappedImages[0];
       swappedImages[0] = newBigImage;
       swappedImages[images.indexOf(newBigImage)] = formerBigImage;
-      console.log(swappedImages)
       setImages(swappedImages)
+    }
+
+    const customStyles = {
+      content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        width: "80%",
+        maxWidth: 800,
+        padding: 30,
+        overflowY: "auto",
+        height: "100vh",
+      },
+    };
+    
+    // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
+    Modal.setAppElement('#root');
+
+    const [modalIsOpen, setIsOpen] = useState(false);
+  
+    function openModal() {
+      setIsOpen(true);
+    }
+  
+    function closeModal() {
+      setIsOpen(false);
     }
 
 
@@ -96,7 +125,7 @@ function AccomodationDetails() {
             </div>
             <div className="accomodation-buttons">
               <button className="button light-button"><span className="detail-heart-icon-wrapper"><AiOutlineHeart className="detail-heart-icon" /></span> Shortlist</button>
-              <button className="button blue-button">Book Viewing</button>
+              <button className="button blue-button" onClick={openModal}>Book Viewing</button>
             </div>
           </div>
         </div>
@@ -119,8 +148,40 @@ function AccomodationDetails() {
             {accomodation?.key_features?.length && accomodation?.key_features.map((feature, index) => <li key={index}><GrCheckmark /> {feature}</li>)}
             </ul>
           </div>
-        
         </div>
+        <div>
+        <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <div className="modal-header">
+          <h2>Contact Us</h2>
+          <img src="../../../public/add_home_work_FILL0_wght300_GRAD0_opsz48 1.png" />
+        </div>
+
+        <p>Feel free to contact us if you have any questions.
+        Looking forward to hear from you.</p>
+        
+        <form className="modal-form" onSubmit={closeModal}>
+          <div className="form-section form-left">
+            <label htmlFor="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name"/>
+            <label htmlFor="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number"/>
+  
+            <label htmlFor="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email address"/>
+          </div> 
+          <div className="form-section form-right">
+            <label htmlFor="message">Message</label>
+            <textarea name="message" id="message" cols="10" rows="5" placeholder="Enter your message"></textarea>
+            <button className="button blue-button">Submit</button>
+          </div>
+        </form>
+      </Modal>
+    </div>
       </div>
   )
 }
