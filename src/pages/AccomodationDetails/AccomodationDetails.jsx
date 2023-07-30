@@ -28,13 +28,21 @@ function AccomodationDetails() {
       .catch(error => console.log(error))
     }, [])
 
-    useEffect(() => {
-      console.log(images)
-    }, [images])
+    
 
+    // useEffect(() => {
+    //   let bedroomPricesHtml = "";
+    //   console.log(accomodation)
+    //   Object.entries(accomodation.bedroom_prices).forEach(price => {
+    //     bedroomPricesHtml += <div><p>price[0]</p><p>price[1]</p></div>
+    //   })
+      // for (let bedroom in accomodation.bedroom_prices) {
+      //   console.log(bedroom)
+      //   console.log(accomodation.bedroom_prices[bedroom])
+      // }
+    // }, [accomodation])
 
     function swapImages(newBigImage) {
-      console.log(images.indexOf(newBigImage))
       const swappedImages = [...images]
       const formerBigImage = swappedImages[0];
       swappedImages[0] = newBigImage;
@@ -76,11 +84,11 @@ function AccomodationDetails() {
               <div className="accomodation-specs">
                 <div className="spec">
                   <h4>Bedrooms</h4>
-                  <p><img src="bed_FILL0_wght300_GRAD0_opsz48_blue.png" alt="bedrooms" /> {accomodation.bedroom_count}</p>
+                  <p><img src="../../public/bed_FILL0_wght300_GRAD0_opsz48_blue.png" alt="beds" /> {accomodation.bedroom_count}</p>
                 </div>
                 <div className="spec">
                   <h4>Bathrooms</h4>
-                  <p><img src="bathtub_FILL0_wght300_GRAD0_opsz48_blue.png" alt="bathtub" />{accomodation.bathroom_count}</p>
+                  <p><img src="../../public/bathtub_FILL0_wght300_GRAD0_opsz48_blue.png" alt="bathr" />{accomodation.bathroom_count}</p>
                 </div>
                 <div className="spec">
                   <h4>Property Type</h4>
@@ -96,7 +104,7 @@ function AccomodationDetails() {
                 </div>
                 <div className="spec">
                   <h4>Available From</h4>
-                  <p>{months.indexOf(accomodation?.availability?.toLowerCase().slice(0,3)) + 1}/{currentYear}</p>
+                  <p>{accomodation.availability}/{currentYear}</p>
                 </div>
               </div>
             </div>
@@ -105,6 +113,27 @@ function AccomodationDetails() {
               <button className="button blue-button">Book Viewing</button>
             </div>
           </div>
+        </div>
+        <div className="details-bottom">
+          <div className="description">
+            <h2>Description</h2>
+            <p>{accomodation?.property_description}</p>
+          </div>
+          <div className="bedroom-prices">
+            <h2>Bedroom Prices</h2>
+            <div className="prices-list">
+              {accomodation?.bedroom_prices && Object.entries(accomodation.bedroom_prices).map((price, index) => 
+              <div className="bedroom-price" key={index} ><p>Bedroom {index + 1}</p><p>{price[1]}</p></div>
+      )}
+            </div>
+          </div>
+          <div className="key-features">
+            <h2>Key Features</h2>
+            <ul className="features-list">
+            {accomodation?.key_features?.length && accomodation?.key_features.map((feature, index) => <li key={index}><GrCheckmark /> {feature}</li>)}
+            </ul>
+          </div>
+        
         </div>
       </div>
   )

@@ -59,20 +59,23 @@
 .details-top-right {
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
 .accomodation-information {
   flex-grow: 1;
   border-radius: 24px;
   border: 1px solid rgba(206, 211, 216, 1);
-  padding: 20px 10px;
+  padding: 20px 30px;
 }
 
 .accomodation-information h2 {
   text-align: center;
+  font-size: 2rem;
   border-bottom: 1px solid rgba(206, 211, 216, 1);
   font-weight: 400;
   margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .accomodation-specs {
@@ -81,6 +84,7 @@
   grid-template-rows: 70px 70px;
   row-gap: 40px;
   justify-items: center;
+  align-content: center;
   text-align: center;
 }
 
@@ -125,4 +129,30 @@
 
 .accomodation-buttons button {
   flex-grow: 1;
+}
+
+.details-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+    "description key-features"
+    "bedroom-prices ."
+}
+
+.bedroom-price {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 1020px) {
+  .details-top {
+    flex-direction: column;
+  }
+  .details-top > * {
+    width: 100%;
+  }
+  .spec p {
+    font-size: 1rem;
+  }
+
 }
