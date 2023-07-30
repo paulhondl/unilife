@@ -7,6 +7,7 @@
 .modal-form {
   display: flex;
   gap: 30px;
+  font-size: 1rem;
 }
 
 .form-section {
@@ -16,13 +17,21 @@
   gap: 20px;
 }
 
+.form-section > * {
+  font-size: 1rem;
+}
+
 .modal-header + p {
   margin-block: 20px 40px;
 }
 
 .form-section label {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 500;
+}
+
+.form-section textarea {
+  flex-grow: 1;
 }
 
 

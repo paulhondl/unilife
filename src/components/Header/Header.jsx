@@ -18,7 +18,7 @@ const customStyles = {
     maxWidth: 800,
     padding: 30,
     overflowY: "auto",
-    height: "100vh"
+    height: "100vh",
   },
 };
 
@@ -106,7 +106,7 @@ function Header() {
             <label htmlFor="email">Email</label>
             <input type="email" id="email" placeholder="Enter your email address"/>
             <textarea name="message" id="message" cols="10" rows="5" placeholder="Enter your message"></textarea>
-            <button className="blue-button">Submit</button>
+            <button className="button blue-button">Submit</button>
           </div>
         </form>
       </Modal>
