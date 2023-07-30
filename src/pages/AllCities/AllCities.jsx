@@ -16,7 +16,7 @@ function AllCities() {
 
 
   useEffect(() =>
-  window.scrollTo(0,0),[])
+   console.log(allCities),[allCities])
 
   return (
     <div className="all-cities-container">
@@ -28,8 +28,8 @@ function AllCities() {
      
       <div className="all-cities-grid">
         <h2>Search by City</h2>
-        <Link className="city-name-cards-container">{allCities.map(city => <div className="city-name-card" key={city.id}>{city.name}</div>)}</Link>
-      </div>
+        <div className="city-name-cards-container">{allCities.map(city => <Link to={`../${city._id}`} relative="path"className="city-name-card" key={city._id}>{city.name}</Link>)}</div>
+      </div>  
     </div>
   )
 }

@@ -158,7 +158,7 @@ function AccomodationDetails() {
       >
         <div className="modal-header">
           <h2>Contact Us</h2>
-          <img src="../../../public/add_home_work_FILL0_wght300_GRAD0_opsz48 1.png" />
+          <img src="/add_home_work_FILL0_wght300_GRAD0_opsz48 1.png" />
         </div>
 
         <p>Feel free to contact us if you have any questions.
