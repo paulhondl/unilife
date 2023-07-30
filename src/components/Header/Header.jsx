@@ -49,8 +49,8 @@ function Header() {
       <div className="header-container">
         <Link to="/">
           <div className="header-left">
-            <img src="../../public/holiday_village_FILL0_wght300_GRAD0_opsz48 3.png" alt="home-link" />
-            <img src="../../public/UniLife.png" alt="unilife-logo"/>
+            <img src="holiday_village_FILL0_wght300_GRAD0_opsz48 3.png" alt="home-link" />
+            <img src="UniLife.png" alt="unilife-logo"/>
           </div>
         </Link>
         
