@@ -11,7 +11,7 @@ function AccomodationDetails() {
   let currentYear = date.getFullYear();
 
   const months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
-
+  
   const {accomodation_id} = useParams();
 
   const [accomodation, setAccomodation] = useState({});
@@ -19,25 +19,19 @@ function AccomodationDetails() {
   useEffect(() => {
     fetch(`https://unilife-server.herokuapp.com/properties/${accomodation_id}`)
       .then(response => response.json())
-      .then(data => console.log(data))
+      .then(data => setAccomodation(data))
       .catch(error => console.log(error))
-  }, [])
-
-  /* 
-    bathroom_count
-    bedroom_count
-    bedroom_prices.bedroom_one
-    property_type
-    furnished
-    address.street, address.city, address.postcode
-  */
- console.log(accomodation)
+    }, [])
 
   useEffect(() => {
-    fetch(`https://unilife-server.herokuapp.com/properties/${accomodation_id}`)
-      .then(response => response.json())
-      .then(data => setAccomodation(data))
-    }, [])
+    console.log(...Object.entries(accomodation.bedroom_prices))
+  }, [accomodation])
+
+  /* 
+    property_description (string)
+    key_features (array)
+    bedroom_prices: {bedroom_one: 160, bedroom_two: 150,... }
+  */
 
   return (
       <div className="details-container">
@@ -45,7 +39,22 @@ function AccomodationDetails() {
         <Link to=".." relative="path"><span className="left-circle"><FiArrowLeftCircle className="left-circle-icon" /></span> <p>Back to search</p></Link>
       </div>
         <div className="details-top">
-          <div className="details-top-left"></div>
+          <div className="details-top-left">
+            <div className="big-picture">
+              <img src={accomodation?.images[0]} alt="some pic" />
+            </div>
+            <div className="small-pictures">
+              <div className="small-picture">
+                <img src={accomodation.images[1]} alt="some pic" />
+              </div>
+              <div className="small-picture">
+                <img src={accomodation.images[2]} alt="some pic" />
+              </div>
+              <div className="small-picture">
+              <img src={accomodation.images[3]} alt="some pic" />
+              </div>
+            </div>
+          </div>
           <div className="details-top-right">
             <div className="accomodation-information">
               <h2>
@@ -86,7 +95,6 @@ function AccomodationDetails() {
             </div>
           </div>
         </div>
-        <GrCheckmark className="check-mark"/>
       </div>
   )
 }
