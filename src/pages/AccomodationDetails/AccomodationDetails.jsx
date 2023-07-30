@@ -10,7 +10,7 @@ function AccomodationDetails() {
   let date = new Date()
   let currentYear = date.getFullYear();
 
-  const months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
+  // const months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
   
   const {accomodation_id} = useParams();
 
@@ -27,20 +27,6 @@ function AccomodationDetails() {
       })
       .catch(error => console.log(error))
     }, [])
-
-    
-
-    // useEffect(() => {
-    //   let bedroomPricesHtml = "";
-    //   console.log(accomodation)
-    //   Object.entries(accomodation.bedroom_prices).forEach(price => {
-    //     bedroomPricesHtml += <div><p>price[0]</p><p>price[1]</p></div>
-    //   })
-      // for (let bedroom in accomodation.bedroom_prices) {
-      //   console.log(bedroom)
-      //   console.log(accomodation.bedroom_prices[bedroom])
-      // }
-    // }, [accomodation])
 
     function swapImages(newBigImage) {
       const swappedImages = [...images]
@@ -84,11 +70,11 @@ function AccomodationDetails() {
               <div className="accomodation-specs">
                 <div className="spec">
                   <h4>Bedrooms</h4>
-                  <p><img src="../../public/bed_FILL0_wght300_GRAD0_opsz48_blue.png" alt="beds" /> {accomodation.bedroom_count}</p>
+                  <p><img src="../../../public/bed_FILL0_wght300_GRAD0_opsz48_blue.png" alt="beds" /> {accomodation.bedroom_count}</p>
                 </div>
                 <div className="spec">
                   <h4>Bathrooms</h4>
-                  <p><img src="../../public/bathtub_FILL0_wght300_GRAD0_opsz48_blue.png" alt="bathr" />{accomodation.bathroom_count}</p>
+                  <p><img src="../../../public/bathtub_FILL0_wght300_GRAD0_opsz48_blue.png" alt="bathr" />{accomodation.bathroom_count}</p>
                 </div>
                 <div className="spec">
                   <h4>Property Type</h4>

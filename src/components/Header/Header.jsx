@@ -4,7 +4,7 @@ import {AiOutlineHeart, AiOutlineMail} from "react-icons/ai"
 import {GiHamburgerMenu} from "react-icons/gi"
 import Modal from 'react-modal';
 import "./Header.css"
-import "./Modal.css"
+import "./ContactModal.css"
 
 const customStyles = {
   content: {
