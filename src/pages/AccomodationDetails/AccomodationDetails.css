@@ -79,6 +79,7 @@
 }
 
 .accomodation-specs {
+  margin-top: 60px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 70px 70px;
@@ -199,5 +200,31 @@
       "key-features"
       "bedroom-prices-list";
     gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .accomodation-information {
+    padding-inline: 10px;
+  }
+  .accomodation-information h2 {
+    font-size: 1.5rem;
+  }
+  .accomodation-specs {
+    margin-top: 20px;
+  }
+  .spec h4,
+  .spec p {
+    font-size: 0.9rem;
+  }
+  .accomodation-buttons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 350px) {
+  .spec h4,
+  .spec p {
+    font-size: 0.75rem;
   }
 }
