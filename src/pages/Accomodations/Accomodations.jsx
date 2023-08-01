@@ -36,8 +36,6 @@ function Accomodations() {
     }
   }
 
-  useEffect(() => {console.log(query)}, [query])
-
   // Get ALL properties in a SINGLE city
 
   useEffect(() => {

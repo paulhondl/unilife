@@ -1,4 +1,5 @@
-import {useState, useEffect} from "react"
+import {useState, useEffect, useContext} from "react"
+// import {ShortlistContext} from "../../contexts/ShortlistContext"
 import {Link, useParams} from "react-router-dom"
 import { FiArrowLeftCircle } from "react-icons/fi"
 import { GrCheckmark } from 'react-icons/gr';
@@ -8,15 +9,17 @@ import "./AccomodationDetails.css"
 
 function AccomodationDetails() {
 
-  let date = new Date()
-  let currentYear = date.getFullYear();
-
-  // const months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
-  
   const {accomodation_id} = useParams();
 
   const [accomodation, setAccomodation] = useState({});
   const [images, setImages] = useState([])
+
+  // Displaying the current year in the "available from" div
+
+  const date = new Date();
+  const currentYear = date.getFullYear();
+
+  
 
 
   useEffect(() => {

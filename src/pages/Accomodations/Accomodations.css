@@ -9,7 +9,6 @@
   margin: 0 auto;
   box-shadow: 0px 12px 24px -12px rgba(0, 0, 0, 0.5);
   background-color: white;
-  color: black;
   border-radius: 12px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
