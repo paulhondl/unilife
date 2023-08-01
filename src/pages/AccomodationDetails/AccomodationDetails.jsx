@@ -1,5 +1,5 @@
 import {useState, useEffect, useContext} from "react"
-// import {ShortlistContext} from "../../contexts/ShortlistContext"
+import {ShortlistContext} from "../../contexts/ShortlistContext"
 import {Link, useParams} from "react-router-dom"
 import { FiArrowLeftCircle } from "react-icons/fi"
 import { GrCheckmark } from 'react-icons/gr';
@@ -8,6 +8,8 @@ import Modal from 'react-modal';
 import "./AccomodationDetails.css"
 
 function AccomodationDetails() {
+
+  const context = useContext(ShortlistContext)
 
   const {accomodation_id} = useParams();
 
@@ -18,9 +20,6 @@ function AccomodationDetails() {
 
   const date = new Date();
   const currentYear = date.getFullYear();
-
-  
-
 
   useEffect(() => {
     fetch(`https://unilife-server.herokuapp.com/properties/${accomodation_id}`)
