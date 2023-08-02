@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react"
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import {AiOutlineHeart, AiOutlineMail} from "react-icons/ai"
 import {GiHamburgerMenu} from "react-icons/gi"
 import Modal from 'react-modal';
@@ -25,6 +25,8 @@ const customStyles = {
 Modal.setAppElement(document.getElementById("root"));
 
 function Header() {
+
+  const navigate = useNavigate()
 
   // Modal setup
 
@@ -56,6 +58,10 @@ function Header() {
     document.querySelector(".mobile-links").classList.toggle("show");
   } 
 
+  function closeMobileMenu() {
+    document.querySelector(".mobile-links").classList.remove("show");
+  }
+
   
  
 
@@ -86,8 +92,8 @@ function Header() {
         </div>
       </div>
       <ul className="mobile-links">
-            <li className="mobile-link">Shortlist</li>
-            <li className="mobile-link" onClick={openModal}>Contact Us</li>
+            <li className="mobile-link" onClick={() => {navigate("shortlist"); closeMobileMenu() }}>Shortlist</li>
+            <li className="mobile-link" onClick={() => {openModal(); closeMobileMenu()}}>Contact Us</li>
       </ul>
       <div>
       <Modal
