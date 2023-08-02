@@ -11,7 +11,7 @@ function AccomodationDetails() {
 
   const {addAccomodation} = useContext(ShortlistContext)
 
-  const {accomodation_id} = useParams();
+  const {accomodation_id, city_id} = useParams();
 
   const [accomodation, setAccomodation] = useState({});
   const [images, setImages] = useState([])
@@ -73,7 +73,7 @@ function AccomodationDetails() {
       <div className="details-container">
         <div className="back-link">
         <Link to=".." relative="path"><span className="left-circle"><FiArrowLeftCircle className="left-circle-icon" /></span> <p>Back to search</p></Link>
-      </div>
+        </div>
         <div className="details-top">
          {images?.length && <div className="details-top-left">
             <div className="big-picture">

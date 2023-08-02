@@ -1,3 +1,8 @@
+.shortlist-card-container {
+  
+}
+
 .remove-icon {
   cursor: pointer;
+  color: red;
 }

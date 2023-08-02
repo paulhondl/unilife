@@ -5,8 +5,9 @@ import './Shortlist.css'
 
 
 function Shortlist() {
+  
   const {shortlist, addAccomodation, removeAccomodation} = useContext(ShortlistContext);
-  console.log(shortlist)
+ 
   return (
     <div className="shortlist-container">
       <h2>Shortlist</h2>
