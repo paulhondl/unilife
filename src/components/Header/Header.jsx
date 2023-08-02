@@ -42,25 +42,27 @@ function Header() {
 
   // MOBILE NAVBAR
 
-  // Always hide mobile menu when viewport gets above 600px
-
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      if(window.innerWidth > 600) {
-        document.querySelector(".mobile-links").classList.remove("show");
-      }
-    })
-  })
-
   // Show/hide menu on hamburger click
 
   function toggleMobileMenu() {
     document.querySelector(".mobile-links").classList.toggle("show");
   } 
 
+  // close hamburger menu
+
   function closeMobileMenu() {
     document.querySelector(".mobile-links").classList.remove("show");
   }
+
+   // Always hide mobile menu when viewport gets above 600px
+
+   useEffect(() => {
+    window.addEventListener("resize", () => {
+      if(window.innerWidth > 600) {
+        closeMobileMenu()
+      }
+    })
+  })
 
   
  
