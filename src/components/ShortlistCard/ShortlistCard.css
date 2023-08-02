@@ -2,9 +2,10 @@
   border: 1px solid rgba(206, 211, 216, 1);
   border-radius: 12px;
   padding: 20px 40px;
+  width: 350px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: space-between;
 }
 
 .shortlist-card-container:hover {
@@ -19,4 +20,11 @@
 
 .remove-icon:hover {
   color: #D2122E
+}
+
+@media (max-width: 460px) {
+  .shortlist-card-container {
+    width: 100%;
+    padding-inline: 10px;
+  }
 }

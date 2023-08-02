@@ -7,15 +7,23 @@
 }
 
 .shortlisted-accomodations {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
   gap: 10px;
 }
 
-.shortlisted-accomodations a {
+.default-link {
   text-decoration: underline;
 }
 
-.shortlisted-accomodations a:hover {
+.default-link:hover {
   color: var(--blue-bg);
+}
+
+
+@media (max-width: 460px) {
+  .shortlist-container {
+    padding-inline: 10px;
+  }
 }
