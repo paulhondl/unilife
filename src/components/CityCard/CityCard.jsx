@@ -5,6 +5,8 @@ function CityCard({city}) {
   
   const {name, property_count, image_url} = city
 
+  // No external css file since the background image needs to be added dimanically //
+
   const cityCardStyles = {
     height: 200,
     width: 300,

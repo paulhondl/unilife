@@ -13,7 +13,7 @@ function Shortlist() {
     <div className="shortlist-container">
       <h2>Shortlist</h2>
       <div className="shortlisted-accomodations">
-        {shortlist.length === 0 ? <p>Please <Link to="/">add accomodations</Link></p>: shortlist.map(accomodation => <ShortlistCard key={accomodation._id} accomodation={accomodation} />)}
+        {shortlist.length === 0 ? <p>Please <Link to="/" className="default-link">add accomodations</Link></p>: shortlist.map(accomodation => <ShortlistCard key={accomodation._id} accomodation={accomodation} />)}
       </div>
     </div>
   )
