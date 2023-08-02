@@ -1,8 +1,22 @@
 .shortlist-card-container {
-  
+  border: 1px solid rgba(206, 211, 216, 1);
+  border-radius: 12px;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.shortlist-card-container:hover {
+  background-color: rgba(206, 211, 216, 1);
 }
 
 .remove-icon {
   cursor: pointer;
-  color: red;
+  color: var(--blue-bg);
+  font-size: 2rem;
+}
+
+.remove-icon:hover {
+  color: #D2122E
 }

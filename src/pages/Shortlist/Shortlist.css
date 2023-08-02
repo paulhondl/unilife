@@ -1,0 +1,21 @@
+.shortlist-container {
+  padding: 40px;
+}
+.shortlist-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.shortlisted-accomodations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.shortlisted-accomodations a {
+  text-decoration: underline;
+}
+
+.shortlisted-accomodations a:hover {
+  color: var(--blue-bg);
+}
