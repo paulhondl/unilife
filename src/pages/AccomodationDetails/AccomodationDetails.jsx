@@ -9,7 +9,7 @@ import "./AccomodationDetails.css"
 
 function AccomodationDetails() {
 
-  const context = useContext(ShortlistContext)
+  const {addAccomodation} = useContext(ShortlistContext)
 
   const {accomodation_id} = useParams();
 
@@ -126,7 +126,7 @@ function AccomodationDetails() {
               </div>
             </div>
             <div className="accomodation-buttons">
-              <button className="button light-button"><span className="detail-heart-icon-wrapper"><AiOutlineHeart className="detail-heart-icon" /></span> Shortlist</button>
+              <button className="button light-button" onClick={() => addAccomodation(accomodation)}><span className="detail-heart-icon-wrapper"><AiOutlineHeart className="detail-heart-icon" /></span> Shortlist</button>
               <button className="button blue-button" onClick={openModal}>Book Viewing</button>
             </div>
           </div>

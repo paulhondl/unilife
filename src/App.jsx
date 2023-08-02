@@ -6,6 +6,7 @@ import TopCities from "./pages/TopCities/TopCities"
 import AllCities from "./pages/AllCities/AllCities"
 import Accomodations from "./pages/Accomodations/Accomodations"
 import AccomodationDetails from "./pages/AccomodationDetails/AccomodationDetails"
+import Shortlist from "./pages/Shortlist/Shortlist"
 import Footer from "./components/Footer/Footer"
 import ShortlistContextProvider from "./contexts/ShortlistContext"
 import './App.css'
@@ -21,6 +22,7 @@ function App() {
         <Route path="all-cities" element={<AllCities />} />
         <Route path=":city_id" exact element={<Accomodations />} />
         <Route path=":city_id/:accomodation_id" element={<AccomodationDetails />} />
+        <Route path="shortlist" element={<Shortlist />} />
       </Routes>
       <SocialMedia />
       <Footer />

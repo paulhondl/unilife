@@ -1,4 +1,4 @@
-import {useState} from "react"
+import {useState, useEffect} from "react"
 import {Link} from "react-router-dom"
 import {AiOutlineHeart, AiOutlineMail} from "react-icons/ai"
 import {GiHamburgerMenu} from "react-icons/gi"
@@ -38,11 +38,26 @@ function Header() {
     setIsOpen(false);
   }
 
-  // Mobile navbar show/hide functionality
+  // MOBILE NAVBAR
+
+  // Always hide mobile menu when viewport gets above 600px
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      if(window.innerWidth > 600) {
+        document.querySelector(".mobile-links").classList.remove("show");
+      }
+    })
+  })
+
+  // Show/hide menu on hamburger click
 
   function toggleMobileMenu() {
     document.querySelector(".mobile-links").classList.toggle("show");
   } 
+
+  
+ 
 
   return (
     <>
@@ -55,7 +70,7 @@ function Header() {
         </Link>
         
         <nav className="header-links">
-          <Link to="" className="header-link">
+          <Link to="shortlist" className="header-link">
             <AiOutlineHeart className="heart-icon" />
             <p>Shortlist</p>
           </Link>
