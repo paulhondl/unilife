@@ -72,7 +72,7 @@ function AccomodationDetails() {
  return (
       <div className="details-container">
         <div className="back-link">
-        <Link to=".." relative="path"><span className="left-circle"><FiArrowLeftCircle className="left-circle-icon" /></span> <p>Back to search</p></Link>
+          <Link to=".." relative="path"><span className="left-circle"><FiArrowLeftCircle className="left-circle-icon" /></span> <p>Back to search</p></Link>
         </div>
         <div className="details-top">
          {images?.length && <div className="details-top-left">
